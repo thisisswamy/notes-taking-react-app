@@ -1,0 +1,41 @@
+.confirm-dialog{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+
+    .dialog-header{
+        h3{
+            padding: 0;
+            margin: 0;
+        }
+
+    }
+    .dialog-body{
+        padding: .5em 0;
+        p{
+            margin: 0;
+            font-size: .9em;
+        }
+    }
+    .dialog-actions{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 1em;
+        margin-top: .8em;
+        .delete-btn{
+            all: unset;
+            background-color: #000000;
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 3px;
+        }
+        .cancel-btn{
+            all: unset;
+            background-color: #ddd;
+            // color: #fff;
+            padding: 3px 12px;
+            border-radius: 3px;
+        }
+    }
+}
