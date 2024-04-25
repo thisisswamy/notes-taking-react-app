@@ -13,6 +13,8 @@ import Signup from './pages/signup/Signup';
 import { Provider } from 'react-redux';
 import { store } from './store/reducers/Store';
 import Layout from './common/components/Layout/Layout';
+import ForgotPassword from './pages/forgot/ForgotPassword';
+import ResetPassword from './pages/reset/ResetPassword';
 
 
 const router = createBrowserRouter([
@@ -63,6 +65,15 @@ const router = createBrowserRouter([
         path:'/signup',
         element:<Signup/>
       },
+      {
+        path:'/forgot-password',
+        element:<ForgotPassword/>
+      },
+
+      {
+        path:'reset-password',
+        element:<ResetPassword/>
+      }
     ]
   }
 ])
@@ -75,7 +86,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
     <RouterProvider router={router}></RouterProvider>
-  </Provider>,
+  </Provider>
     
   </React.StrictMode>
 );

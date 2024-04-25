@@ -5,7 +5,7 @@
     align-items: center;
     // height: 70vh;
 
-    .sign-form{
+    .login-form{
         max-width: 500px;
         min-width: 300px;
         width: 100%;
@@ -20,9 +20,8 @@
                 display: inline-block;
             }
         }
-       form{
         .form-group{
-            padding:10px 20px 10px 0;
+            padding: 15px 15px 10px 15px;
             input{
                 all: unset;
                 border: 1.4px solid #dddd;
@@ -43,7 +42,7 @@
         }
         
         .button-area{
-            padding: 1em 1.2em 1em 0;
+            padding: 1em;
             button{
                 all: unset;
                 background-color: #000000;
@@ -59,6 +58,5 @@
             }
         }
 
-       }
     }
 }

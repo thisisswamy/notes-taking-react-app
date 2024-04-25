@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     margin: 2em;
     .note{
         border: 1px solid #ddd;
@@ -27,6 +28,22 @@
                 width: 100%;
                 border: none;
             }
+        }
+    }
+    .button-area{
+        padding: 1em;
+        button{
+            all: unset;
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 30px;
+            width: 100%;
+            text-align: center;
+            border-radius: 6px;
+
+        }
+        .disable-btn{
+            opacity: .6;
         }
     }
 

@@ -1,11 +1,11 @@
-.wrapper-1{
+.forgot-form-wrapper{
     display: flex;
     justify-content: center;
     margin: 2em;
     align-items: center;
-    // height: 70vh;
+    height: 50vh;
 
-    .sign-form{
+    .forgot-form{
         max-width: 500px;
         min-width: 300px;
         width: 100%;
@@ -43,7 +43,7 @@
         }
         
         .button-area{
-            padding: 1em 1.2em 1em 0;
+            padding: 1em 1em 1em 0em;
             button{
                 all: unset;
                 background-color: #000000;

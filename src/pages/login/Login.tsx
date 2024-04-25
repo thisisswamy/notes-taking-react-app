@@ -25,6 +25,7 @@ function Login() {
     navigate('/home')
     console.log(isSubmitted)
   }
+  const forgotPass =()=> navigate('/forgot-password')
   return (
     <div className="main">
       {/* <Header></Header> */}
@@ -39,7 +40,7 @@ function Login() {
         <div className="form-group">
           <input type="text" placeholder='Password' />
         </div>
-        <small>Forgot password</small>
+        <small onClick={forgotPass}>Forgot password</small>
         <div className="button-area">
           <button onClick={submit} disabled={isSubmitted} className={isSubmitted?'disable-btn':''}>Login</button>
         </div>
