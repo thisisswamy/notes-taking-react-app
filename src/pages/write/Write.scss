@@ -4,6 +4,15 @@
     align-items: center;
     flex-direction: column;
     margin: 2em;
+    .error-success-note{
+        padding: 10px 0;
+        .success-note{
+            color: green;
+        }
+        .error-note{
+            color: red;
+        }
+    }
     .note{
         border: 1px solid #ddd;
         width: 100%;

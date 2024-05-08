@@ -4,30 +4,61 @@ import './Header.scss'
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from '../../../store/reducers/Store';
 import { updateUserLoggedInStatus } from '../../../store/slices/userLoggedInSlice';
+import { useEffect, useMemo } from 'react';
+import { endpoints } from '../../../config/api/endpoints';
+import { axiosInterceptorInstance } from '../../../config/axios/axioIntance';
+import { DataService } from '../../services/DataService';
+import { userProfile, userProfileInfo } from '../../../store/slices/userProfileSlice';
 
 
 function Header() {
 
 
-  const {isUserLoggedIn} = useSelector((state:RootState)=> state.userLoggedIn);
+  const {isUserLoggedIn} = useSelector((state:RootState)=> {
+    return state.userLoggedIn
+  });
   const navigate =useNavigate()
   const dispatch =useDispatch()
+  const dataService = useMemo(()=>new DataService(),[]);
 
+  useEffect(()=>{
+    getUserProfile()
+  },[])
+
+  const getUserProfile = async ()=>{
+    let url = endpoints.user.profile
+    axiosInterceptorInstance.get(url).then((res:any)=>{
+      dispatch(updateUserLoggedInStatus({
+        isUserLoggedIn: true,
+        userEmail:res.data.userName
+      }))
+      dispatch(userProfileInfo({
+        userName: res.data.userName,
+        userRoles: res.data.roles,
+        userEmail: res.data.email,
+        userId: res.data.reference,
+        lastLoggedIn: new Date().getTime().toString()
+      }))
+    })
+    .catch((err:any)=>{
+      console.log(err.response.data)
+    })
+  }
   const logout =()=>{
     dispatch(updateUserLoggedInStatus({
       isUserLoggedIn: false,
-      userName: '',
-      userRoles: []
     }))
+    localStorage.clear()
     navigate('/')
   }
+
 
 
   return (
     <div className="header-wrapper">
       <div className="header-title-menu">
         <div className="title">
-          <h2>Notes Taking App</h2>
+          <h2>Notes</h2>
           <small>Start Writing..</small>
         </div>
         <div className="header-menu">

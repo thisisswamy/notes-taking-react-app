@@ -1,4 +1,4 @@
-.wrapper-1{
+.login-wrapper{
     display: flex;
     justify-content: center;
     margin: 2em;
@@ -20,8 +20,15 @@
                 display: inline-block;
             }
         }
+        .error-msg{
+            .error-msg-note{
+                color: red;
+                padding: 10px 0;
+                text-decoration: none;
+            }
+        }
         .form-group{
-            padding: 15px 15px 10px 15px;
+            padding: 10px 15px 10px 0px;
             input{
                 all: unset;
                 border: 1.4px solid #dddd;
@@ -31,6 +38,10 @@
             }
             input:focus{
                 border-color: cadetblue;
+            }
+            .error-msge{
+                color: red;
+                text-decoration: none;
             }
         }
         small{

@@ -2,14 +2,14 @@ import { Navigate, Outlet } from "react-router-dom";
 import "./App.css";
 import Footer from "./common/components/footer/Footer";
 import Header from "./common/components/header/Header";
-import { DataService } from "./common/services/DataService";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/reducers/Store";
 
 function App() {
  
   
-  const {isUserLoggedIn,userName, userRoles} = useSelector((state:RootState)=> state.userLoggedIn)
+  const {isUserLoggedIn} = useSelector((state:RootState)=> state.userLoggedIn)
+  const tokens = localStorage.getItem("tokens")
 
   return (
     <div className="main-container">
@@ -17,7 +17,7 @@ function App() {
         <Header />
       </header>
       <div className="main-content">
-        { isUserLoggedIn ? <Outlet /> : <Navigate to='/login'  />}
+        { (isUserLoggedIn || tokens) ? <Outlet /> : <Navigate to='/login'  />}
       </div>
       
       <footer>

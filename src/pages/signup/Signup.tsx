@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
-
-import './Signup.scss'
+import './Signup.scss';
+import axios from 'axios'
+import { endpoints } from "../../config/api/endpoints";
+import { useDispatch } from "react-redux";
+import { updateUserLoggedInStatus } from '../../store/slices/userLoggedInSlice';
 const schema = yup.object({
                             email:yup.string().required('Email is required').email("Invalid Email"),
                             username:yup.string().required("Username is required").matches(/[a-zA-z0-9]+/g,'Invalid username'),
@@ -16,16 +19,43 @@ const schema = yup.object({
 
 function Signup() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const navigate = useNavigate();
 
-  const {register,handleSubmit,watch,formState: { errors },} = useForm({
+  const {register,handleSubmit,formState: { errors }} = useForm({
     resolver:yupResolver(schema),
-    mode:'onTouched'
+    mode:'onTouched',
+    defaultValues:{
+      email:'swamy@gmail.com',
+      username:"swamy787",
+      password:"1234",
+      confirmPassword:"1234"
+    }
   });
 
-  const submit = (data:any) => {
+  const navigator = useNavigate();
+  const dispatch = useDispatch();
+
+  const submit = (data:any) => {  
+    const body ={
+      "username":data?.userName,
+      "email":data?.email,
+      "password":data?.password,
+      "confirmPassword":data?.confirmPassword
+    }
+    setIsSubmitted(true)
+    axios.post(endpoints.baseURL()+endpoints.user.register,body)
+      .then((response:any)=>{
+        console.log(response)
+        setIsSubmitted(false)
+        dispatch(updateUserLoggedInStatus({
+          isUserLoggedIn: true,
+        }))
+        navigator("/home")
+      })
+      .catch((error:any)=>{
+        console.log(error)
+        setIsSubmitted(false)
+      })
     
-    console.log(data);
   };
   return (
     <div className="main">

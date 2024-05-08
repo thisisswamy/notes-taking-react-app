@@ -1,6 +1,6 @@
 .confirm-dialog{
     background-color: #fff;
-    padding: 10px;
+    padding: 20px;
     border-radius: 6px;
 
     .dialog-header{
@@ -12,6 +12,9 @@
     }
     .dialog-body{
         padding: .5em 0;
+        .error-note{
+            color: red;
+        }
         p{
             margin: 0;
             font-size: .9em;

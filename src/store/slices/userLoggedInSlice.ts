@@ -2,15 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export interface UserLoggedInStatus{
     isUserLoggedIn:boolean,
-    userName:string,
-    userRoles:string[],
+    userEmail?:String
 }
 
 
 const userLoggedInStatusIntialState:UserLoggedInStatus ={
     isUserLoggedIn: false,
-    userName: '',
-    userRoles: []
+    userEmail:''
 }
 
 
@@ -21,8 +19,7 @@ export const userLoggedInSlice = createSlice({
     reducers: {
         updateUserLoggedInStatus :(state,action:PayloadAction<UserLoggedInStatus>)=>{
             state.isUserLoggedIn = action.payload.isUserLoggedIn;
-            state.userName = action.payload.userName;
-            state.userRoles = action.payload.userRoles;
+            state.userEmail = action.payload.userEmail
         }
         
     },
