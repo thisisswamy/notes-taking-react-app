@@ -13,10 +13,27 @@
             color: red;
         }
     }
+    .note-labels{
+       display: flex;
+       align-content: center;
+       align-items: center;
+       width: 100%;
+        input{
+            width: 17px;
+            height: 18px;
+           accent-color: green;
+        }
+        label{
+            padding-right: 40px;
+            position: relative;
+            top: 2px;
+        }
+        
+    }
     .note{
-        border: 1px solid #ddd;
+        // border: 1px solid #ddd;
         width: 100%;
-        height:100dvh;
+        // min-height:100dvh;
         padding: 1em;
         border-radius: 8px;
         .note-heading{
@@ -32,8 +49,11 @@
         }
         .note-area{
             padding: 1em;
+            // height: 100%;
             .editor-class{
-                height: 60dvh;
+                height: 50dvh;
+                // max-height: 60dvh;
+                // height: 100%;
                 width: 100%;
                 border: none;
             }

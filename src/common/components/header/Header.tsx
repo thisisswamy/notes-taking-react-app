@@ -8,7 +8,7 @@ import { useEffect, useMemo } from 'react';
 import { endpoints } from '../../../config/api/endpoints';
 import { axiosInterceptorInstance } from '../../../config/axios/axioIntance';
 import { DataService } from '../../services/DataService';
-import { userProfile, userProfileInfo } from '../../../store/slices/userProfileSlice';
+import { userProfileInfo } from '../../../store/slices/userProfileSlice';
 
 
 function Header() {
@@ -41,7 +41,7 @@ function Header() {
       }))
     })
     .catch((err:any)=>{
-      console.log(err.response.data)
+      console.log(err)
     })
   }
   const logout =()=>{
@@ -59,7 +59,7 @@ function Header() {
       <div className="header-title-menu">
         <div className="title">
           <h2>Notes</h2>
-          <small>Start Writing..</small>
+          <small className='sub-heading'>Start Writing</small>
         </div>
         <div className="header-menu">
            {

@@ -4,6 +4,8 @@
     .intro-section{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
         gap: 1em;
         padding: 3em 2em;
         margin-top: 1em;
@@ -16,6 +18,9 @@
             // box-shadow: 0 0 10px rgba(0 0 0/10%);
            img{
             width: 620px;
+            @media(max-width:760px){
+                width: 250px;;
+            }
            }
         }
         .description{
@@ -28,7 +33,33 @@
         }
     }
     .divider{
-        height: 150px;
+        height: 90px;
         width: 100%;
+    }
+    .ending-quote{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       .quotes-card{
+            width: 1050px;
+            text-align: center;
+            padding: 50px;
+            box-shadow: 0 0 10px 0 rgba(0 0 0/15%);
+            border-right: 4px solid green;
+            border-left: 4px solid green;
+            border-radius: 6px;
+            .info{
+                font-weight: 500;
+                font-size: 1.4em;
+                word-wrap: break-word;
+            }
+            .end-info{
+                font-size: 1.3em;
+            
+                .link{
+                    color: rgb(4, 134, 234);
+                }
+            }
+       }
     }
 }

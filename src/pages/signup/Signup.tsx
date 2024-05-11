@@ -23,12 +23,7 @@ function Signup() {
   const {register,handleSubmit,formState: { errors }} = useForm({
     resolver:yupResolver(schema),
     mode:'onTouched',
-    defaultValues:{
-      email:'swamy@gmail.com',
-      username:"swamy787",
-      password:"1234",
-      confirmPassword:"1234"
-    }
+    
   });
 
   const navigator = useNavigate();

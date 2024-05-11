@@ -10,7 +10,8 @@ import { DataService } from "../../common/services/DataService";
 import { axiosInterceptorInstance } from "../../config/axios/axioIntance";
 import {convert } from 'html-to-text';
 import Loader from "../../common/components/loader/Loader";
-
+import NotesCard from "../../common/components/notes-card/NotesCard";
+import { v4 as uuidv4 } from 'uuid';
 
 function Home() {
   const navigate = useNavigate()
@@ -28,19 +29,9 @@ function Home() {
 
   useEffect(()=>{
     setIsDataLoading(true)
-    // let url = endpoints.user.byEmail
-    // const endpoint = url.replace("{email}",String(userEmail))
-    // axiosInterceptorInstance.get(endpoint).then((res:any)=>{
-    //   dataService.set("userProfile",res.data)
-    //   setUsername(res.data.username)
       if(userEmail){
         getAllNotes(userId)
       }
-      console.log("user id "+userId)
-    // })
-    // .catch((err:any)=>{
-      
-    // })
 
   },[userId])
 
@@ -56,9 +47,6 @@ function Home() {
     .finally( ()=>setIsDataLoading(false))
   }
 
-  const logout =()=>{
-    navigate('/login')
-  }
 
   const confimDeleteEventListner = (data:any)=>{
     if(data && data.isDelete){
@@ -74,8 +62,7 @@ function Home() {
       setDeleteBtnClick(false)
       setIsDeleted(false);
       setIsDataLoading(true)
-      
-      getAllNotes(dataService.get("userProfile").id)
+      getAllNotes(userId)
 
     }).catch((err:any)=>{
       setIsDeleted(true);
@@ -90,56 +77,44 @@ function Home() {
   }
   return (
     <div className="home-wrapper">
+      
        <div className="get-started">
-        <p>Welcome <strong> {userName}</strong></p>
-         <button onClick={goToWrite}> Start taking Notes...</button>
+        <div className="greet-note">
+          {/* <p>Welcome <strong> {userName}.</strong></p> */}
+          <p>Welcome <strong>USER NAME.</strong></p>
+        </div>
+         <div className="write-button">
+          <button onClick={goToWrite}> Start taking Notes</button>
+         </div>
        </div>
 
        <div className="recent-notes">
         <div className="section-title">
           <h2>Recent Notes</h2>
-          {
-              isDataLoading && <div className="loader-area" key={new Date().getTime()}>
+            {
+              isDataLoading && 
+              <div className="loader-area" key={new Date().getTime()}>
                 <Loader  key={new Date().getTime()+780}/> 
               </div>
             }
-           <div className="cards-area">
-            
-            {
-              notesList.length>0 
-              ?
-              notesList.map((ele:any)=> 
-                    <>
-                      <div className="note-card" key={ele?.id} >
-                        <div className="card-header" onClick={()=> navigate('/edit/'+ele.id)}>
-                          <p>{ ele?.title}</p>
-                          <small>
-                            {
-                              `${new Date(ele.writtendate).getDate()}/${new Date(ele.writtendate).getMonth()}/${new Date(ele.writtendate).getFullYear()}`
-                            }
-                            </small>
-                        </div>
-                        <div className="card-body" onClick={()=> navigate('/edit/'+ele.id)}>
-                          <small>{
-                              convert(ele?.notesText)
-                            }</small>
-                        </div>
-                        <div className="card-actions">
-                          <button onClick={()=> onDelete(ele)}>Delete</button>
-                        </div>
-                      </div>
-                    
-                    </>)
 
-              :
-              (!isDataLoading) ? 
-              <>
-              <div className="empty-list">
-                <p className="no-records">No notes created at ! start writing..</p>
-              </div>
-             </> : ''
-            }
-           </div>
+            <div className="cards-area">
+                {
+                   notesList.length>=1 ?
+                    notesList.map((note:any)=> <NotesCard key={uuidv4()} note ={note}  triggerDelete ={onDelete}/>)
+
+                    :
+                    (!isDataLoading) ? 
+                    <>
+                      <div className="empty-list">
+                        <p className="no-records">No notes created at ! start writing..</p>
+                      </div>
+                     </> : ''
+
+
+                }
+            </div>
+          
 
         </div>
        </div>

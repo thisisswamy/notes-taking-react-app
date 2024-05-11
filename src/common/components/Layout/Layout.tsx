@@ -12,7 +12,6 @@ function Layout() {
       <div className="main-content">
        <Outlet></Outlet>
       </div>
-      
       <footer>
         <Footer />
       </footer>

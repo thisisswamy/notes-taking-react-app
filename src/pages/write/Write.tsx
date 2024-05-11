@@ -8,7 +8,10 @@ import { endpoints } from '../../config/api/endpoints';
 import { axiosInterceptorInstance } from '../../config/axios/axioIntance';
 import { useParams } from 'react-router-dom';
 import Loader from '../../common/components/loader/Loader';
-
+import { noteLabels } from '../../common/services/Dataconstant';
+import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/reducers/Store';
 type RequestState ={
    isSubmited?:boolean,
    isSuccess?:boolean,
@@ -16,8 +19,10 @@ type RequestState ={
 }
 
 function Write() {
+   const {userEmail,userId,userName} = useSelector((state:RootState)=>state.userProfile)
   const [editorState,setEditorState] = useState<any>();
   const [notesTitle,setNotesTitle] = useState<any>('');
+  const [noteLabel,setNoteLabel] = useState<any>('');
   const [editorNoteAvailable,setEditorNoteAvailable] = useState<boolean>(false);
   const [requestState,setRequestState] = useState<RequestState>({
                                                    isFailure:false,
@@ -28,9 +33,9 @@ function Write() {
   const {id} = useParams()
   const [isDataLoading, setIsDataLoading] = useState(false);
 
-  
+  const labelsList = noteLabels;
   useEffect(()=>{
-      if(id!==null && id!==''){
+      if(id && id!==null && id!==''){
          setEditNote(id)
       }
   },[])
@@ -42,6 +47,7 @@ function Write() {
    axiosInterceptorInstance.get(url).then((res:any)=>{
       setEditorState(res.data.notesText)
       setNotesTitle(res.data.title)
+      setNoteLabel(res.data.label)
    }).catch((err:any)=>{
       setEditorNoteAvailable(false)
       
@@ -54,7 +60,8 @@ function Write() {
       return {
          "title" :notesTitle,
          "notesText":editorState,
-         "userId":dataService.get("userProfile")?.id
+         "userId":userId,
+         "label": noteLabel
       }
   }
 
@@ -83,6 +90,9 @@ function Write() {
             })
          })
          // .finally(()=>setRequestState({...requestState,isSubmited:false}))
+  }
+  const getLabel = (label:any)=>{
+      setNoteLabel(label)
   }
   const updateNote =(id:any)=>{
    const data = getBody();
@@ -117,6 +127,21 @@ function Write() {
             requestState?.isFailure &&  <><small className='error-note'>Failed to save note </small></>
          }  
       </div>
+      <div className="note-labels">
+        
+            {
+               labelsList.map((label:any)=> {
+                  return (<>
+                  <input type='radio' value={label} id="label"  name="forLabeling" onChange={()=>getLabel(label)}
+                  checked={label===noteLabel}
+                  key={uuidv4()}
+                  /> 
+                  <label htmlFor="label" key={uuidv4()}> {label}</label> 
+                  </>)
+               })
+            }
+         
+      </div>
        {
          isDataLoading ? <Loader/>
          :
@@ -127,7 +152,7 @@ function Write() {
             </div>
             <div className="note-area">
                <ReactQuill theme="snow" value={editorState} onChange={setEditorState} 
-               className='editor-class'
+               className='editor-class' placeholder='write here'
                />
             </div>
          </div>
