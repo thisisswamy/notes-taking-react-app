@@ -55,7 +55,7 @@ function Signup() {
   return (
     <div className="main">
       {/* <Header></Header> */}
-      <div className="wrapper-1">
+      <div className="sign-wrapper-1">
         <div className="sign-form">
           <div className="title">
             <h2>Signup</h2>

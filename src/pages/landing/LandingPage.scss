@@ -1,6 +1,7 @@
 .main-content{
-    background-color: #fff;
     // padding: 2em 0;
+    color: var(--text-color);
+    background-color: var(--theme-bg-color);
     .intro-section{
         display: flex;
         justify-content: space-between;
@@ -8,11 +9,11 @@
         align-items: center;
         gap: 1em;
         padding: 3em 2em;
-        margin-top: 1em;
+        // margin-top: 1em;
 
         .image{
-            border: 1px solid #fff;
-            background-color: #fff;
+            border: 1px solid var(--text-color);
+            background-color: var(--text-color);
             border-radius: 8px;
             padding: 10px;
             // box-shadow: 0 0 10px rgba(0 0 0/10%);
@@ -45,8 +46,8 @@
             text-align: center;
             padding: 50px;
             box-shadow: 0 0 10px 0 rgba(0 0 0/15%);
-            border-right: 4px solid green;
-            border-left: 4px solid green;
+            border-right: 4px solid var(--footer-bg-color);
+            border-left: 4px solid var(--footer-bg-color);
             border-radius: 6px;
             .info{
                 font-weight: 500;
@@ -57,7 +58,7 @@
                 font-size: 1.3em;
             
                 .link{
-                    color: rgb(4, 134, 234);
+                    color:var(--active-link-color);
                 }
             }
        }

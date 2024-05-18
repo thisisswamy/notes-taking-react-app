@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 2em;
+    padding: 2em;
     .error-success-note{
         padding: 10px 0;
         .success-note{
@@ -63,8 +63,8 @@
         padding: 1em;
         button{
             all: unset;
-            background-color: #000000;
-            color: #fff;
+            background-color: var(--btn-bg-color);
+            color: var(--btn-text-color);
             padding: 10px 30px;
             width: 100%;
             text-align: center;

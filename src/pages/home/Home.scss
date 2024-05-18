@@ -8,9 +8,10 @@
         // justify-content: space-around;
         padding: 2em;
         height: 30dvh;
-        background-color: rgb(189, 247, 189);
+        background-color: var(--main-background-color);
        
         .greet-note{
+           
             p{
                 margin: 0;
                 padding: 0;
@@ -25,9 +26,9 @@
             padding-top: 1em;
             button{
                 all: unset;
-                background-color: #000000;
+                background-color: var(--btn-bg-color);
                 padding: .6em 4rem;
-                color: #fff;
+                color: var(--btn-text-color);
                 text-transform: uppercase;
                 border-radius: 8px;
             }
@@ -43,7 +44,7 @@
                 padding: 0;
                 margin: 0;
                 border-radius: 2px;
-                border-bottom: 5px solid rgb(54, 148, 54);
+                border-bottom: 5px solid var(--recent-border-color);
             }
             .loader-area{
                 display: flex;

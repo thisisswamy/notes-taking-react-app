@@ -1,0 +1,72 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './scss/dark-theme';
+@import './scss/light-theme';
+
+
+:root {
+  --main-background-color: #{$main-bg-color};
+  --text-color: #{$common-white-text-color};
+
+  --btn-bg-color: #{$btn-bg-color};
+  --btn-text-color: #{$btn-text-color};
+
+  --box-shadow-color: #{$box-model-shadow};
+  --border-color:#{$border-color};
+
+  --footer-bg-color:#{$footer-bg-color};
+  --footer-text-color:#{$footer-text-color};
+
+  --active-link-color:#{$active-link-color};
+
+  --header-bg-color:#{$header-bg-color};
+  --header-text-color:#{$header-text-color};
+
+  --theme-bg-color:#{$theme-bg-color};
+
+  --tags-bg-color:#{$tags-bg-color};
+  --tags-text-color:#{$tags-text-color};
+
+  --recent-border-color:#{$recent-border-color};
+}
+
+[data-theme='dark'] {
+  --main-background-color: #{$dark-main-bg-color};
+  --text-color: #{$dark-common-white-text-color};
+
+  --btn-bg-color: #{$dark-btn-bg-color};
+  --btn-text-color: #{$dark-btn-text-color};
+
+  --box-shadow-color: #{$dark-box-model-shadow};
+  --border-color:#{$dark-border-color};
+
+  --footer-bg-color:#{$dark-footer-bg-color};
+  --footer-text-color:#{$dark-footer-text-color};
+
+  --active-link-color:#{$dark-active-link-color};
+
+  --header-bg-color:#{$dark-header-bg-color};
+  --header-text-color:#{$dark-header-text-color};
+  
+  --tags-bg-color:#{$dark-tags-bg-color};
+  --tags-text-color:#{$dark-tags-text-color};
+
+  --theme-bg-color:#{$dark-main-bg-color};
+  --recent-border-color:#{$dark-recent-border-color};
+
+
+  --box-bg-color : #{$dark-box-bg-color};
+
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+ 
+}
+
+

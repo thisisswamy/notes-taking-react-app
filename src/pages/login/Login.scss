@@ -1,7 +1,7 @@
 .login-wrapper{
     display: flex;
     justify-content: center;
-    margin: 2em;
+    padding: 2em;
     align-items: center;
     // height: 70vh;
 
@@ -9,14 +9,14 @@
         max-width: 500px;
         min-width: 300px;
         width: 100%;
-        background-color: #ffff;
+        background-color: var(--box-bg-color);
         box-shadow: 0 0 10px 0 rgba(0 0 0/10%);
         border-radius: 8px;
         padding: 20px;
 
         .title{
             h2{
-                border-bottom: 4px solid #000000;
+                border-bottom: 4px solid var(--text-color);
                 display: inline-block;
             }
         }
@@ -31,7 +31,7 @@
             padding: 10px 15px 10px 0px;
             input{
                 all: unset;
-                border: 1.4px solid #dddd;
+                border: 1.4px solid var(--border-color);
                 padding: 10px;
                 width: 100%;
                 border-radius: 6px;
@@ -45,7 +45,7 @@
             }
         }
         small{
-            color: darkblue;
+            color: var(--active-link-color);
             padding-left: 10px;
             text-decoration: underline;
             cursor: pointer;
@@ -54,8 +54,8 @@
             padding: 1em;
             button{
                 all: unset;
-                background-color: #000000;
-                color: #fff;
+                background-color:var(--btn-bg-color);
+                color: var(--btn-text-color);
                 padding: 10px;
                 width: 100%;
                 text-align: center;

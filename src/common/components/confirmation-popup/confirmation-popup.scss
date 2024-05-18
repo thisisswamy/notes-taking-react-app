@@ -1,8 +1,8 @@
 .confirm-dialog{
-    background-color: #fff;
+    background-color: var(--box-bg-color);
     padding: 20px;
     border-radius: 6px;
-
+    color: var(--text-color);
     .dialog-header{
         h3{
             padding: 0;
@@ -28,15 +28,15 @@
         margin-top: .8em;
         .delete-btn{
             all: unset;
-            background-color: #000000;
-            color: #fff;
+            background-color: var(--btn-bg-color);
+            color: var(--btn-text-color);
             padding: 3px 12px;
             border-radius: 3px;
         }
         .cancel-btn{
             all: unset;
-            background-color: #ddd;
-            // color: #fff;
+            background-color: var(--btn-bg-color);
+            color: var(--btn-text-color);
             padding: 3px 12px;
             border-radius: 3px;
         }
