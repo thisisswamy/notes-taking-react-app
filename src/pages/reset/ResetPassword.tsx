@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './reset.scss'
-import { useDispatch } from 'react-redux'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
@@ -17,7 +16,7 @@ function ResetPassword() {
     const navigate =useNavigate()
   const [isSubmitted,setIsSubmitted] = useState(false);
   
-  const {register,handleSubmit,watch,formState: { errors },} = useForm({
+  const {register,handleSubmit,formState: { errors },} = useForm({
     resolver:yupResolver(schema),
     mode:'onTouched'
   });

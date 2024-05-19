@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import './Home.scss'
 import ConfirmationPopup from '../../common/components/confirmation-popup/ConfirmationPopup';
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { endpoints } from '../../config/api/endpoints';
 import { useSelector } from "react-redux";
 import { RootState } from '../../store/reducers/Store';
-import { DataService } from "../../common/services/DataService";
 import { axiosInterceptorInstance } from "../../config/axios/axioIntance";
-import {convert } from 'html-to-text';
 import Loader from "../../common/components/loader/Loader";
 import NotesCard from "../../common/components/notes-card/NotesCard";
 import { v4 as uuidv4 } from 'uuid';
@@ -16,15 +14,13 @@ import { v4 as uuidv4 } from 'uuid';
 function Home() {
   const navigate = useNavigate()
 
-  const {userEmail,userId,userName} = useSelector((state:RootState)=>state.userProfile)
+  const {userEmail,userId} = useSelector((state:RootState)=>state.userProfile)
   // const [userName, setUsername] = useState('')
-  const dataService =useMemo(()=>new DataService(),[])
   const [isDeleteClicked, setDeleteBtnClick] =useState<any>(false)
   const [notesList, updateNotesList] = useState<any[]>([]);
   const [isDataLoading, setIsDataLoading] = useState<boolean>(false);
   const [isDeleted, setIsDeleted] = useState<boolean>(false);
   const [selectedNote, setSelectedNote] = useState<any>();
-  const tokens :any = JSON.parse(localStorage.getItem("tokens")!);
 
 
   useEffect(()=>{
@@ -58,13 +54,13 @@ function Home() {
   }
   const deleteNote = ()=>{
     const url = endpoints.notes.delete.replace("{id}", selectedNote?.id)
-    axiosInterceptorInstance.delete(url).then((res:any)=>{
+    axiosInterceptorInstance.delete(url).then(()=>{
       setDeleteBtnClick(false)
       setIsDeleted(false);
       setIsDataLoading(true)
       getAllNotes(userId)
 
-    }).catch((err:any)=>{
+    }).catch(()=>{
       setIsDeleted(true);
     })
   }

@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import './Write.scss'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import {convert } from 'html-to-text';
 import { DataService } from '../../common/services/DataService';
 import { endpoints } from '../../config/api/endpoints';
 import { axiosInterceptorInstance } from '../../config/axios/axioIntance';
@@ -19,7 +18,7 @@ type RequestState ={
 }
 
 function Write() {
-   const {userEmail,userId,userName} = useSelector((state:RootState)=>state.userProfile)
+   const {userId} = useSelector((state:RootState)=>state.userProfile)
   const [editorState,setEditorState] = useState<any>();
   const [notesTitle,setNotesTitle] = useState<any>('');
   const [noteLabel,setNoteLabel] = useState<any>('');
