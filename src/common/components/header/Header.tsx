@@ -40,6 +40,7 @@ function Header() {
 
   useEffect(()=>{
     getUserProfile()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const getUserProfile = async ()=>{

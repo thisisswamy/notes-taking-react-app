@@ -15,7 +15,6 @@ function Home() {
   const navigate = useNavigate()
 
   const {userEmail,userId} = useSelector((state:RootState)=>state.userProfile)
-  // const [userName, setUsername] = useState('')
   const [isDeleteClicked, setDeleteBtnClick] =useState<any>(false)
   const [notesList, updateNotesList] = useState<any[]>([]);
   const [isDataLoading, setIsDataLoading] = useState<boolean>(false);
@@ -29,7 +28,7 @@ function Home() {
         getAllNotes(userId)
       }
 
-  },[userId])
+  },[userId,userEmail])
 
   const getAllNotes = (userId?:any)=>{
     updateNotesList([])

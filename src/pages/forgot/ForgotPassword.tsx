@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import './forgot.scss'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'

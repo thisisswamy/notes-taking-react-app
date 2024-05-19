@@ -1,8 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Write.scss'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { DataService } from '../../common/services/DataService';
 import { endpoints } from '../../config/api/endpoints';
 import { axiosInterceptorInstance } from '../../config/axios/axioIntance';
 import { useParams } from 'react-router-dom';
