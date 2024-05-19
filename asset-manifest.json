@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/notes-taking-react-app/static/css/main.08f3d123.css",
+    "main.js": "/notes-taking-react-app/static/js/main.1f106a0b.js",
+    "static/js/453.2c52a258.chunk.js": "/notes-taking-react-app/static/js/453.2c52a258.chunk.js",
+    "index.html": "/notes-taking-react-app/index.html",
+    "main.08f3d123.css.map": "/notes-taking-react-app/static/css/main.08f3d123.css.map",
+    "main.1f106a0b.js.map": "/notes-taking-react-app/static/js/main.1f106a0b.js.map",
+    "453.2c52a258.chunk.js.map": "/notes-taking-react-app/static/js/453.2c52a258.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08f3d123.css",
+    "static/js/main.1f106a0b.js"
+  ]
+}
