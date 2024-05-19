@@ -8,6 +8,7 @@
         box-shadow: 0 0 10px 0 rgba(0 0 0/10%);
 
         .note-header{
+            cursor: pointer;
             p{
                 margin: 0;
                 padding: 0;
@@ -23,6 +24,7 @@
             }
         }
         .note-body{
+            cursor: pointer;
             color: #898989;
             word-wrap: break-word;
             padding: 8px;

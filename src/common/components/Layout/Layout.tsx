@@ -4,10 +4,7 @@ import Footer from '../footer/Footer';
 import { useEffect } from 'react';
 
 function Layout() {
-  useEffect(()=> {
-     document.documentElement.setAttribute('data-theme', 'dark')
-    console.log("from app")
-  },[])
+
   return (
     <div>
       <div className="main-container">
