@@ -1,5 +1,5 @@
 {
-  "homepage" :"https://thisisswamy.github.io/notes-taking-react-app/",
+  "homepage" :".",
   "name": "notes-taking-react-app",
   "version": "0.1.0",
   "private": true,
