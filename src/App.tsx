@@ -4,13 +4,11 @@ import Footer from "./common/components/footer/Footer";
 import Header from "./common/components/header/Header";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/reducers/Store";
-import { useEffect, useState } from "react";
 
 function App() {
  
   
   const {isUserLoggedIn} = useSelector((state:RootState)=> state.userLoggedIn)
-  const [theme, setTheme] = useState('light');
   const tokens = localStorage.getItem("tokens")
 
   return (

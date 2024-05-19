@@ -28,7 +28,6 @@ function Write() {
                                                    isSubmited:false,
                                                    isSuccess:false
                                                 });
-  const  dataService = useMemo(()=> new DataService(),[])
   const {id} = useParams()
   const [isDataLoading, setIsDataLoading] = useState(false);
 
@@ -37,7 +36,7 @@ function Write() {
       if(id && id!==null && id!==''){
          setEditNote(id)
       }
-  },[])
+  },[id])
 
   const setEditNote = (id:any)=>{
    setEditorNoteAvailable(true)
@@ -47,13 +46,13 @@ function Write() {
       setEditorState(res.data.notesText)
       setNotesTitle(res.data.title)
       setNoteLabel(res.data.label)
-   }).catch((err:any)=>{
+   }).catch(()=>{
       setEditorNoteAvailable(false)
       
    }).finally(()=>setIsDataLoading(false))
   }
   const titleText =(e:any)=>{
-      setNotesTitle((prev:any)=> e.target.value)
+      setNotesTitle(()=> e.target.value)
   }
   const getBody =()=>{
       return {
@@ -77,14 +76,14 @@ function Write() {
    }
    const body = getBody()
    axiosInterceptorInstance.post(endpoints.notes.save,body)
-         .then((res:any)=>{
+         .then(()=>{
             setRequestState({...requestState,isSuccess:true})
             window.scrollTo({
                top:0,
                behavior:"smooth"
             })
             
-         }).catch((err:any)=>{
+         }).catch(()=>{
             setRequestState({ ...requestState,isFailure:true
             })
          })
@@ -99,14 +98,14 @@ function Write() {
       ...data, id:id
    }
    const url = endpoints.notes.update.replace("{id}",id)
-   axiosInterceptorInstance.put(url,body).then((res:any)=>{
+   axiosInterceptorInstance.put(url,body).then(()=>{
       setRequestState({...requestState,isSuccess:true})
             window.scrollTo({
                top:0,
                behavior:"smooth"
             })
 
-   }).catch((err:any)=>{
+   }).catch(()=>{
       setRequestState({ ...requestState,isFailure:true
       })
    })

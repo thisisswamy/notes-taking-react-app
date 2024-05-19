@@ -4,10 +4,9 @@ import './Header.scss'
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from '../../../store/reducers/Store';
 import { updateUserLoggedInStatus } from '../../../store/slices/userLoggedInSlice';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { endpoints } from '../../../config/api/endpoints';
 import { axiosInterceptorInstance } from '../../../config/axios/axioIntance';
-import { DataService } from '../../services/DataService';
 import { userProfileInfo } from '../../../store/slices/userProfileSlice';
 
 
@@ -19,7 +18,6 @@ function Header() {
   });
   const navigate =useNavigate()
   const dispatch =useDispatch()
-  const dataService = useMemo(()=>new DataService(),[]);
 
   const [theme, setTheme] = useState('light');
 

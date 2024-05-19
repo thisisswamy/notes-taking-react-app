@@ -15,8 +15,8 @@ function ForgotPassword() {
 
 
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const { register,handleSubmit,watch,formState: { errors }} = useForm({
+    const [isSubmitted] = useState(false);
+    const { register,handleSubmit,formState: { errors }} = useForm({
                                                                             resolver:yupResolver(schema),
                                                                             mode:'onTouched'
                                                                         });
