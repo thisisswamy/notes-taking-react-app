@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/notes-taking-react-app/static/css/main.08f3d123.css",
-    "main.js": "/github.io/notes-taking-react-app/static/js/main.a38f49e4.js",
-    "static/js/453.2c52a258.chunk.js": "/github.io/notes-taking-react-app/static/js/453.2c52a258.chunk.js",
-    "index.html": "/github.io/notes-taking-react-app/index.html",
-    "main.08f3d123.css.map": "/github.io/notes-taking-react-app/static/css/main.08f3d123.css.map",
-    "main.a38f49e4.js.map": "/github.io/notes-taking-react-app/static/js/main.a38f49e4.js.map",
-    "453.2c52a258.chunk.js.map": "/github.io/notes-taking-react-app/static/js/453.2c52a258.chunk.js.map"
+    "main.css": "./static/css/main.08f3d123.css",
+    "main.js": "./static/js/main.b3351714.js",
+    "static/js/453.2c52a258.chunk.js": "./static/js/453.2c52a258.chunk.js",
+    "index.html": "./index.html",
+    "main.08f3d123.css.map": "./static/css/main.08f3d123.css.map",
+    "main.b3351714.js.map": "./static/js/main.b3351714.js.map",
+    "453.2c52a258.chunk.js.map": "./static/js/453.2c52a258.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08f3d123.css",
-    "static/js/main.a38f49e4.js"
+    "static/js/main.b3351714.js"
   ]
 }
