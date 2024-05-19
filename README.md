@@ -1,6 +1,33 @@
+## About Application
+ - This is simple note taking REACT application, where a user can perform CRUD Operations.
+ - Implemented both dark and light theme.
+ - Integrated Text Editor for taking notes
+ - Used Router V6+ version.
+ - End to end authenticated with JWT Token. 
+ - Designed API's, can find repository named as ''notes-service-springboot''.
+ - This is build for React practice. 
+ - So far only light screens are documented, can refer below link. 
+
+
+
+## Topics Covered :
+ - Implementing Authentication.
+ - Handling/Managing Authentication on refresh.
+ - Implementing Dark and Light Theme.
+ - Writing structured and clean code.
+ - Using Router DOM version v6 +
+ - Implementing Public and Protected routes
+ - Integrating Restful APIs.
+ - Using Axios Library and Interceptors.
+ - Form handling both success and error scenarios. 
+ - Login and Logout Functionality.
+
+
+
+
 # To view the application UI Page follow the link 
 
-Open[https://scribehow.com/shared/Create_Account_and_Take_Notes_with_Online_App__bMbdgBSdTNukm4SQQMX3Sw]
+Open [https://scribehow.com/shared/Create_Account_and_Take_Notes_with_Online_App__bMbdgBSdTNukm4SQQMX3Sw]
 
 
 
@@ -33,21 +60,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-"# notes-taking-react-app" 
+ 
