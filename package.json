@@ -1,7 +1,7 @@
 {
-  "homepage": ".",
+  "homepage": "https://thisisswamy.github.io/notes-taking-react-app",
   "name": "notes-taking-react-app",
-  "proxy":"https://thisisswamy.github.io/notes-taking-react-app/",
+  "proxy":"https://thisisswamy.github.io/notes-taking-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
